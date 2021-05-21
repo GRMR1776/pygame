@@ -1,16 +1,20 @@
 # ===== Inicialização =====
 # ----- Importa e inicia pacotes
-
 import pygame
 
 pygame.init()
 
 # ----- Gera tela principal
-window = pygame.display.set_mode((500, 400))
-pygame.display.set_caption('Hello World!')
+WIDTH = 500
+HEIGHT = 400
+window = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption('Mira!')
 
 # ----- Inicia estruturas de dados
 game = True
+
+# ----- Inicia assets
+image = pygame.image.load('imagens/Fotocapa-removebg-preview.png').convert()
 
 # ===== Loop principal =====
 while game:
@@ -21,12 +25,12 @@ while game:
             game = False
 
     # ----- Gera saídas
-    window.fill((255, 255, 255))  # Preenche com a cor branca
+    window.fill((0, 0, 0))  # Preenche com a cor branca
+    window.blit(image, (-50, -5))
 
     # ----- Atualiza estado do jogo
     pygame.display.update()  # Mostra o novo frame para o jogador
 
 # ===== Finalização =====
 pygame.quit()  # Função do PyGame que finaliza os recursos utilizados
-
 
